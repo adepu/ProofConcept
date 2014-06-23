@@ -39,7 +39,6 @@
 					var ret = [];
 					var log = [];
 					deferred.resolve(angular.forEach(restaurants, function(restaurant, key){
-
 						setTimeout(function() {
 							// var hours = restaurant.hours.split('\n');
 							var address = restaurant.contact.split('\u2022')[0];
@@ -60,6 +59,33 @@
 									map: map,
 									title: 'restaurant.name'
 							});
+					setTimeout(function() {
+						// var hours = restaurant.hours.split('\n');
+						var address = restaurant.contact.split('\u2022')[0];
+						var phone = restaurant.contact.split('\u2022')[1];
+						var burgerName = restaurant.burger.split(":")[0];
+						var burgerDescription = restaurant.burger.split(":")[1];
+						Restangular.oneUrl('maps', 'https://maps.googleapis.com/maps/api/geocode/json?address='+address+',+Richmond,+VA').get().then(function(result){
+								var lat = result.results[0].geometry.location.lat;
+								var lng = result.results[0].geometry.location.lng;
+								var to   = new google.maps.LatLng(lat,lng);
+								var dist = google.maps.geometry.spherical.computeDistanceBetween(from, to) * 0.000621371;
+										console.log(dist);
+								restaurant.distance = Math.round(dist * 100) / 100;
+								//console.log(dist);
+								restaurant.distance = Math.round(dist * 100) / 100;
+								restaurant.distance = dist;
+								restaurant.lat = lat;
+								restaurant.lng = lng;
+ 
+						});
+						// restaurant.hours = hours;
+						restaurant.address = address;
+						restaurant.phone = phone;
+						restaurant.burgerName = burgerName;
+						restaurant.burgerDescription = burgerDescription;
+					}, 100);
+				}))
 
 																});
 						}, 100);

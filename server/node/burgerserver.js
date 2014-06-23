@@ -32,7 +32,7 @@ app.get('/scrape', function(req, res){
 		        var data = $(this);
 		        var restaurant = {};
 		        restaurant.logo = "http://www.styleweekly.com" + data.children().first().attr("src");
-		        restaurant.name = data.parent().children().next().eq(1).text();
+		        //restaurant.name = data.parent().children().next().eq(1).text();
 		        restaurant.burger = data.parent().children().next().eq(2).text(); 
 		        restaurant.hours = data.parent().children().next().eq(3).text(); 
 		        restaurant.contact = data.parent().children().next().eq(4).text();          
