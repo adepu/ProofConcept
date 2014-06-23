@@ -1,7 +1,18 @@
-<div ng-repeat="restaurant in restaurants">
-	<img src="{{restaurant.logo}}">
-	<p>{{restaurant.name}}</p>
-	<p>{{restaurant.burger}}</p>
-	<p>{{restaurant.contact}}</p>
-	<p>{{restaurant.distance}}</p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12" align="center">
+			<img src="https://www.google.com/maps/vt/data=VLHX1wd2Cgu8wR6jwyh-km8JBWAkEzU4,mhL8KAotFzB6wwdlFoLBJ9YsM8GLiVH4_vO_m11c671eJA5EEI968FSvUnEIM85ryE2uoXkrG-dCJ9388ikf6IL9xY5qgzSLwRMGfiMbOB0AaYofQWc8ykdReReUT-mL4-ejZIp77aEw-IWq0eGGK7tmx1hVG_rZ4ODgBnPlm_8wSpHhRUgR7w-qLUJwr_mEvhs63F_O">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 text-center" ng-repeat="restaurant in restaurants">
+			<img src="{{restaurant.logo}}">
+			<!-- <strong><p align="center">{{restaurant.name}}</p></strong> -->
+			<p class="title">{{restaurant.burgerName}}</p>
+			<p>{{restaurant.burgerDescription}}</p>
+			<p>{{restaurant.hours}}</p>
+			<strong><p>{{restaurant.address + "  |  " + restaurant.phone}}</p></strong>
+			<p>{{restaurant.distance + " miles"}}</p>
+		</div>
+	</div>
 </div>
