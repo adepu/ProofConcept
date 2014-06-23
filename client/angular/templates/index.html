@@ -1,7 +1,10 @@
-<div ng-repeat="restaurant in restaurants">
+<div id="map-canvas"></div>
+<div ng-repeat="restaurant in restaurants| orderBy: 'distance': reverse">
 	<img src="{{restaurant.logo}}">
 	<p>{{restaurant.name}}</p>
 	<p>{{restaurant.burger}}</p>
 	<p>{{restaurant.contact}}</p>
 	<p>{{restaurant.distance}}</p>
 </div>
+
+
