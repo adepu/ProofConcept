@@ -35,8 +35,7 @@ app.get('/scrape', function(req, res){
 		        //restaurant.name = data.parent().children().next().eq(1).text();
 		        restaurant.burger = data.parent().children().next().eq(2).text(); 
 		        restaurant.hours = data.parent().children().next().eq(3).text(); 
-		        restaurant.contact = data.parent().children().next().eq(4).text();          
-
+		        restaurant.contact = data.parent().children().next().eq(4).text();        
                 restaurants.push(restaurant);
 	        });
 		}
