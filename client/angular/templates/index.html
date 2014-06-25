@@ -6,18 +6,24 @@
 </div>
 <div class="container">
 	<div class="row">
+		<h1 align="center">RVA Burger Week 2014</h1>
+		<h4 align="center">Find the restaurant closest to you!</h4>
 		<div class="col-md-12" align="center">
 			<div id="map-canvas"></div>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-3 text-center grid-element" ng-repeat="restaurant in restaurants | orderBy: 'distance'" ng-show="restaurant.address">
-			<img src="{{restaurant.logo}}">
-			<p class="title">{{restaurant.burgerName}}</p>
-			<p>{{restaurant.burgerDescription}}</p>
-			<p>{{restaurant.hours}}</p>
-			<strong><p>{{restaurant.address + "  |  " + restaurant.phone}}</p></strong>
-			<p>{{restaurant.distance + " miles"}}</p>
+		<div class="col-md-3" ng-repeat="restaurant in restaurants | orderBy: 'distance'" ng-show="restaurant.address && restaurant.distance">
+			<div class="thumbnail grid-element">
+
+				<img src="{{restaurant.logo}}">
+				<p class="label label-primary">{{restaurant.distance + " miles"}}</p>
+				<br>
+				<h3 class="text-center">{{restaurant.burgerName}}</h3>
+				<p>{{restaurant.burgerDescription}}</p>
+				<p>{{restaurant.hours}}</p>
+				<strong><p>{{restaurant.address + "  |  " + restaurant.phone}}</p></strong>
+			</div>
 		</div>
 	</div>
 </div>

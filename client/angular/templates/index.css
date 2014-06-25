@@ -3,6 +3,10 @@
 	font-weight: bold;
 	text-transform: uppercase;
 }
+.container
+{
+	font-family: 'Open Sans', sans-serif;
+}
 
 .grid-element {
 	min-height: 450px;
@@ -16,4 +20,16 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
+}
+
+#distance{
+	color: green;
+	font: bold 12pt;
+}
+#map-canvas{
+	margin-bottom: 25px;
+}
+
+.element {
+	border: 1px solid black;
 }
