@@ -1,1 +1,1 @@
-web: node ~/Applications/MAMP/htdocs/ProofConcept/server/node/burgerserver.js
+web: node burgerserver.js
