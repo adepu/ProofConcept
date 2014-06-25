@@ -1,1 +1,1 @@
-var app = angular.module('myScraper', ['restangular','ngRoute']);
+var app = angular.module('myScraper', ['restangular','ngRoute', 'wc.Directives']);
