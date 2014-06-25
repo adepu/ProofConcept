@@ -2,15 +2,20 @@
 			function success(position) { 
 					// stackoverflow: distance between 2 geo locations
 					var from = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-					var bounds = new google.maps.LatLngBounds();
+					var image = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
 					var mapOptions = {zoom: 12, center: from}
 					var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+					var marker = new google.maps.Marker({
+										position: from,
+										map: map,
+										title: "My location",
+										icon: image
+								});
 					var deferred = $q.defer();
 					var promise = deferred.promise;
 					var orderBy = $filter('orderBy');
 					promise.then(function(restaurants){
 						$scope.restaurants = restaurants;
-						map.fitBounds(bounds);
 					})
 					/*
 					.then(function($scope.restaurants){
@@ -45,22 +50,21 @@
 										var lng = result.results[0].geometry.location.lng;
 										var to   = new google.maps.LatLng(lat,lng);
 										var dist = google.maps.geometry.spherical.computeDistanceBetween(from, to) * 0.000621371;
-										restaurant.distance = dist;	
 										restaurant.distance = Math.round(dist * 100) / 100;
 										restaurant.lat = lat;
 										restaurant.lng = lng;
 										var marker = new google.maps.Marker({
 										position: new google.maps.LatLng(restaurant.lat,restaurant.lng),
 										map: map,
-										title: 'restaurant.name'
+										title: restaurant.name
 								});
-										bounds.extend(marker.position);
 						});
 								restaurant.address = address;
 								restaurant.phone = phone;
 								restaurant.burgerName = burgerName;
 								restaurant.burgerDescription = burgerDescription;
 					}, 100);
+
 						//$scope.restaurants = restaurants;
 					}));
 				});

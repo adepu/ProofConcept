@@ -2,6 +2,7 @@
 	"name" : "myScraper",
 	"version": "0.0.1",
 	"description": "Scraping the web",
+	"main": "burgerserver.js",
 	"dependencies": {
 	"express" : "latest",
 	"request" : "latest",

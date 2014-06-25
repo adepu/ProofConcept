@@ -5,7 +5,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-3 text-center" ng-repeat="restaurant in restaurants | orderBy: 'distance'">
+		<div class="col-md-3 text-center grid-element" ng-repeat="restaurant in restaurants | orderBy: 'distance'" ng-show="restaurant.address">
 			<img src="{{restaurant.logo}}">
 			<!-- <strong><p align="center">{{restaurant.name}}</p></strong> -->
 			<p class="title">{{restaurant.burgerName}}</p>

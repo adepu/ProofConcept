@@ -3,3 +3,7 @@
 	font-weight: bold;
 	text-transform: uppercase;
 }
+
+.grid-element {
+	min-height: 450px;
+}
