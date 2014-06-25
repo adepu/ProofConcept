@@ -11,6 +11,7 @@
 										title: "My location",
 										icon: image
 								});
+					var infowindow = new google.maps.InfoWindow();
 					var deferred = $q.defer();
 					var promise = deferred.promise;
 					var orderBy = $filter('orderBy');
@@ -54,10 +55,14 @@
 										restaurant.lat = lat;
 										restaurant.lng = lng;
 										var marker = new google.maps.Marker({
-										position: new google.maps.LatLng(restaurant.lat,restaurant.lng),
-										map: map,
-										title: restaurant.name
-								});
+											position: new google.maps.LatLng(restaurant.lat,restaurant.lng),
+											map: map,
+											title: restaurant.name
+										});
+										google.maps.event.addListener(marker, 'click', function() {
+								            infowindow.setContent("<h4>" + this.title + "</h4><p>"+ burgerName +"<br><small>"+ burgerDescription +"</small></p>" );
+								            infowindow.open(map, this);
+								        });
 						});
 								restaurant.address = address;
 								restaurant.phone = phone;
