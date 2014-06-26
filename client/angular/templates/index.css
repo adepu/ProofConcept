@@ -33,11 +33,21 @@
 	font: bold 12pt;
 }
 #map-canvas{
-	margin-bottom: 25px;
+	margin-top: 25px;
+	margin-bottom: 50px;
+}
+.top-banner {
+	background-color: #2980b9;
+	padding: 15px;
+	margin: 10px;
+}
+.RVAtitle, .tagline {
+	color: white;
 }
 
-.element {
-	border: 1px solid black;
+.grid-element {
+	margin-bottom: 40px;
+
 }
 
 .rotate
@@ -45,4 +55,17 @@
 transform:rotate(-45deg);
 -ms-transform:rotate(7deg); /* IE 9 */
 -webkit-transform:rotate(-45deg); /* Opera, Chrome, and Safari */
+}
+
+.label-success{
+	font-size: 13pt;
+}
+
+.alert-info{
+	font: white;
+}
+
+.rcslogo{
+	max-height: 120px;
+	padding: 0px;
 }

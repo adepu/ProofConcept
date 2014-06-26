@@ -6,11 +6,11 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="alert alert-info" bg-color='#1D2951'>
-			<span class="pull-left"><img src="http://18vi1n40obrku6xfb34e3uj4dx.wpengine.netdna-cdn.com/wp-content/uploads/2014/06/burger_week_banner-20141-110x110.jpg"></span>
-			<h1 align="center">RVA Burger Week 2014</h1>
-			<h4 align="center">Find the restaurant closest to you!</h4>
-		</div>
+		<div class="top-banner">
+			<span class="pull-right"><img src="http://18vi1n40obrku6xfb34e3uj4dx.wpengine.netdna-cdn.com/wp-content/uploads/2014/06/burger_week_banner-20141-110x110.jpg"></span>
+			<span class="rcslogo pull-left" height="75px"><img src="client/angular/logo.jpg"></span>
+			<h1 align="center" class="RVAtitle">RVA Burger Week 2014</h1>
+			<h4 align="center" class="tagline">Find the restaurant closest to you!</h4>
 			<div class="col-md-12" align="center">
 
 			<div id="map-canvas"></div>
@@ -20,7 +20,7 @@
 		<div class="col-md-3 text-center" ng-repeat="restaurant in restaurants | orderBy: 'distance'" ng-show="restaurant.address && restaurant.distance">
 			<div class="thumbnail grid-element">
 				<div class="rotate pull-left banner">
-				<span class="label label-success ">{{restaurant.distance + " miles"}}</span>
+				<span class="label label-success">{{restaurant.distance + " miles"}}</span>
 				</div>
 				<img src="{{restaurant.logo}}">
 				
@@ -28,7 +28,12 @@
 				<h4 class="text-center">{{restaurant.burgerName}}</h4>
 				<!--<p>{{restaurant.burgerDescription}}</p>
 				<p>{{restaurant.hours}}</p>-->
-				<div class="text-center"><strong><p>{{restaurant.address + "  |  " + restaurant.phone}}</p></strong></div>
+				<div class="text-center">
+					<strong>
+						<p>{{restaurant.address}}</p>
+						<p>804-{{restaurant.phone}}</p>
+					</strong>
+				</div>
 			</div>
 		</div>
 	</div>
