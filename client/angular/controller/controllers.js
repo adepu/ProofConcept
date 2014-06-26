@@ -10,6 +10,11 @@ app.controller('scraperController', function($scope, Restangular, $filter, $q){
 			title: "My location",
 			icon: image
 		});
+		google.maps.event.addListener(marker, 'click', function() {
+								            infowindow.setContent('My Location');
+								            infowindow.open(map, this);
+								        });
+		var infowindow = new google.maps.InfoWindow();
 		var deferred = $q.defer();
 		var promise = deferred.promise;
 		promise.then(function(restaurants){

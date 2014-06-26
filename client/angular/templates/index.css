@@ -9,7 +9,7 @@
 }
 
 .grid-element {
-	min-height: 450px;
+	min-height: 275px;
 }
 
 .overlayContainer { display: none;}
@@ -22,6 +22,12 @@
 	left: 50%;
 }
 
+.banner{
+	position: absolute;
+	left: 0px;
+	top:0px;
+}
+
 #distance{
 	color: green;
 	font: bold 12pt;
@@ -32,4 +38,11 @@
 
 .element {
 	border: 1px solid black;
+}
+
+.rotate
+{
+transform:rotate(-45deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(-45deg); /* Opera, Chrome, and Safari */
 }
